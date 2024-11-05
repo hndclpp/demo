@@ -1,37 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
-    font-family: 'Noto Sans SC', sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding: 50px;
+    background-color: #f0f4f8;
+    color: #333;
 }
 
-/* 面包屑导航样式 */
-.breadcrumb {
-    margin: 15px;
-    font-size: 0.9em;
-}
-
-.breadcrumb a {
-    color: #007BFF;
-    text-decoration: none;
-}
-
-.breadcrumb a:hover {
-    text-decoration: underline;
-}
 h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
@@ -70,7 +46,7 @@ button:hover {
 
 .result {
     margin-top: 30px;
-    font-size: 1em;
+    font-size: 1.2em;
     background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -82,16 +58,50 @@ button:hover {
     margin-right: auto;
 }
 
+.result h2 {
+    font-size: 1.6em;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
 .result div {
     margin: 5px 0;
     padding: 5px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px dashed #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
+.result div p {
+ 
+}
 .result div:last-child {
     border-bottom: none;
 }
 
-.variable {
-    color: rgb(156, 213, 138);
+/* 添加字段名和字段值颜色 */
+.result div span.field-name {
+    color: purple;
+    font-weight: bold;
+}
+
+.result div span.field-value {
+    color: #9cdb8a; /* 绿色字体 */
+}
+
+/* 字段项之间的绿色分隔线 */
+.result div {
+    border-bottom: 1px dashed #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+/* 更加清晰的条目 */
+.result div strong {
+    font-weight: normal; 
+}
+
+/* 如果有错误消息显示 */
+.error {
+    color: red;
 }
