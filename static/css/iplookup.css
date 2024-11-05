@@ -59,8 +59,8 @@ button:hover {
 }
 
 .result h2 {
-    font-size: 1.6em;
-    color: #3498db;
+    font-size: 1em;
+    color: #e5e5e5;
     margin-bottom: 10px;
 }
 
@@ -81,17 +81,16 @@ button:hover {
 
 /* 添加字段名和字段值颜色 */
 .result div span.field-name {
-    color: purple;
-    font-weight: bold;
+    color: #b8dae7;
 }
 
 .result div span.field-value {
-    color: #9cdb8a; /* 绿色字体 */
+    color: #5cd938; 
 }
 
-/* 字段项之间的绿色分隔线 */
+/* 字段项之间的分隔线 */
 .result div {
-    border-bottom: 1px dashed #3498db;
+    border-bottom: 1px dashed #d9d9d9;
     padding-bottom: 10px;
     margin-bottom: 10px;
 }
