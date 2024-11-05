@@ -9,11 +9,13 @@
 <body>
     <h1>抠图工具</h1>
     <input type="file" id="upload" accept="image/*">
+    <span id="fileName" style="margin-left: 10px;"></span>
     <button id="processButton">抠图</button>
     <div id="resultContainer">
         <h2>处理结果：</h2>
         <img id="resultImage" src="" alt="抠图结果" style="display:none;">
     </div>
+    <div id="loading" style="display:none;">处理中，请稍候...</div>
     <script src="../static/js/cutout.js"></script>
 </body>
 </html>

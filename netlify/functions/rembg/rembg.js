@@ -32,7 +32,7 @@ export async function handler(req, res) {
                 const response = await fetch('https://api.remove.bg/v1.0/removebg', {
                     method: 'POST',
                     headers: {
-                        'X-Api-Key': process.env.REMBG_API_KEY,
+                        'X-Api-Key': process.env.REMBG_API_KEY, // 确保你的 API 密钥在环境变量中
                         ...formData.getHeaders(),
                     },
                     body: formData,
