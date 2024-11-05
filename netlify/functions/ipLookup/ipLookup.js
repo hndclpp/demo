@@ -1,6 +1,5 @@
-const fetch = require("node-fetch");
-
 exports.handler = async (event) => {
+    const fetch = (await import("node-fetch")).default; 
     const ip = event.queryStringParameters.ip;
     const ipInfoToken = process.env.IPINFO_TOKEN;
 
