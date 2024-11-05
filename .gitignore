@@ -1,0 +1,4 @@
+# Local folder
+.env
+node_modules/
+.vercel
