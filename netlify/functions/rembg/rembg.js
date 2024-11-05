@@ -7,7 +7,6 @@ const upload = multer().single('image_file');
 
 export async function handler(req, res) {
     if (req.method === 'POST') {
-        // 使用 multer 中间件处理请求
         upload(req, res, async (err) => {
             if (err) {
                 console.error('文件上传失败:', err);
@@ -19,7 +18,6 @@ export async function handler(req, res) {
                 return res.status(400).json({ error: '没有文件上传' });
             }
 
-            // 使用 FormData 构造请求数据
             const formData = new FormData();
             formData.append('size', 'auto');
             formData.append('image_file', req.file.buffer, {
@@ -28,22 +26,19 @@ export async function handler(req, res) {
             });
 
             try {
-                // 调用 remove.bg API
                 const response = await fetch('https://api.remove.bg/v1.0/removebg', {
                     method: 'POST',
                     headers: {
-                        'X-Api-Key': process.env.REMBG_API_KEY, // 确保你的 API 密钥在环境变量中
-                        ...formData.getHeaders(),
+                        'X-Api-Key': process.env.REMBG_API_KEY,
                     },
                     body: formData,
                 });
 
                 if (!response.ok) {
                     const errorMessage = await response.text();
-                    throw new Error(`${response.status}: ${response.statusText} - ${errorMessage}`);
+                    throw new Error(${response.status}: ${response.statusText} - ${errorMessage});
                 }
 
-                // 返回处理后的图片
                 const buffer = await response.buffer();
                 res.setHeader('Content-Type', 'image/png');
                 res.send(buffer);
@@ -54,6 +49,6 @@ export async function handler(req, res) {
         });
     } else {
         res.setHeader('Allow', ['POST']);
-        res.status(405).end(`Method ${req.method} Not Allowed`);
+        res.status(405).end(Method ${req.method} Not Allowed);
     }
 }
